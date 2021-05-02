@@ -4,7 +4,7 @@
   "description": "Projek backend clone ecommerce flipkart",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./src/index.server.js"
   },
   "keywords": [
     "ecommerce",
