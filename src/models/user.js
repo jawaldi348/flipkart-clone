@@ -44,4 +44,16 @@ const userSchema = new mongoose.Schema({
     profilePicture: { type: String }
 }, { timestamps: true });
 
+// buat field spesial untuk hash password karena lidak bisa dilakukan oleh mongodb
+userSchema.virtual('password')
+    .set(function (password) {
+        this.hash_password = bcrypt.hashSync(password, 10);
+    });
+
+userSchema.methods = {
+    authenticate: function () {
+        return bcrypt.compare(password, this.hash_password);
+    }
+}
+
 module.exports = mongoose.model('User', userSchema);
