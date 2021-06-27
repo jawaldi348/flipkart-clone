@@ -4,6 +4,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+// Routes
+const userRoutes = require('./routes/user');
+
 // environment variable or you can say constants
 env.config();
 
