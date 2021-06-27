@@ -16,7 +16,8 @@ mongoose.connect(
     `mongodb://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0-shard-00-00.wio8y.mongodb.net:27017,cluster0-shard-00-01.wio8y.mongodb.net:27017,cluster0-shard-00-02.wio8y.mongodb.net:27017/${process.env.MONGO_DB_DATABASE}?ssl=true&replicaSet=atlas-udto7u-shard-0&authSource=admin&retryWrites=true&w=majority`,
     {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex: true
     }
 ).then(() => {
     console.log('Database connected!');
