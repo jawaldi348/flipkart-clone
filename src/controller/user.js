@@ -31,7 +31,7 @@ exports.signup = (req, res) => {
                 }
                 if (data) {
                     return res.status(201).json({
-                        user: data
+                        message: 'User created Successfully...!'
                     })
                 }
             });
